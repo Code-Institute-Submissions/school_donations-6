@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>School Donations Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/introjs.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',
+         filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+
+ </head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container-fluid">
+       <div class="navbar-header">
+           <a class="navbar-brand" href="./">School Donations Dashboard</a>
+       </div>
+       <div class="navbar-right">
+           <button class="intro_button btn-success" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
+       </div>
+   </div>
+</div>
+
+
+<div  id="outer" class="container-fluid">
+
+   <div class="row">
+
+       <div class="col-sm-12">
+           <div class="row">
+
+               <!-- Time Chart -->
+               <div class="col-sm-8">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Number of Donations
+                       </div>
+                       <div class="chart-stage" data-step="1" data-intro="This chart tracks the number of donations over the years, since 2003." style="font-weight: normal" data-position="right">
+                           <div id="time-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Time Chart -->
+
+               <!-- funding Pie -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Funding Status
+                       </div>
+                       <div class="chart-stage" data-step="2" data-intro="Select to view donations by status of completion." style="font-weight: normal" data-position="left">
+                           <div id="funding-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- funding Pie -->
+
+               <!-- Metric 1 -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Total Number of Donations
+                       </div>
+                       <div class="chart-stage" data-step="3" data-intro="Total number of donations." style="font-weight: normal" data-position="right" style=" background: #33CC99;
+                           position: relative;
+                           font-size: 29px;
+                           color: white;
+                           vertical-align: middle;
+                           text-align: center;
+                           padding-top: 12px;
+                           padding-bottom: 0px;">
+                           <div id="number-projects-nd"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Metric 1 -->
+
+               <!-- Metric 2 -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Total Donations in USD
+                       </div>
+                       <div class="chart-stage" data-step="4" data-intro="Total amount in US Dollars." style="font-weight: normal" data-position="right">
+                           <div id="total-donations-nd"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Metric 2 -->
+
+               <!-- menu select -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Donation State
+                       </div>
+                       <div class="chart-stage" data-step="5" data-intro="Select to view donations by state." style="font-weight: normal" data-position="left">
+                           <div id="menu-select"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- menu select -->
+           </div>
+
+           <div class="row">
+               <!-- Resources -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Resources Type
+                       </div>
+                       <div class="chart-stage" data-step="6" data-intro="<p>This bar graph shows where donations have been spent based on resource types.</p> <p>Select an option to show data specifically related to each resource.</p>" style="font-weight: normal" data-position="right">
+                           <div id="resource-type-row-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Resources -->
+
+               <!-- Primary subject -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Primary Focus Subject
+                       </div>
+                       <div class="chart-stage" data-step="7" data-intro="<p>This graph shows where donations have been spent, based on the school's primary focus subject...</p> <p>Select an option to show data specifically related to that particular focus.</p>" style="font-weight: normal" data-position="right">
+                           <div id="primary-focus-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Primary subject -->
+
+               <!-- Poverty -->
+               <div class="col-sm-4">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Poverty Level
+                       </div>
+                       <div class="chart-stage" data-step="8" data-intro="<p>Finally, where donations were spent, based on the school's level of poverty...</p> <p>Select an option to show data specifically related to the level of poverty.</p>" style="font-weight: normal" data-position="left">
+                           <div id="poverty-level-row-chart"></div>
+                       </div>
+                   </div>
+               </div>
+               <!-- Poverty -->
+           </div>
+       </div>
+
+   </div>
+</div>
+
+<hr>
+<p class="small text-muted"> Data viz &#9829; from Andrew Fillary</a></p>
+
+</div>
+<script src="{{ url_for ('static', filename='lib/js/intro.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html>
