@@ -12,7 +12,7 @@ DBS_NAME = os.getenv('MONGO_DB_NAME')
 MONGO_URI = os.getenv('MONGO_URI')
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
-          'date_posted': True, 'total_donations': True, '_id': False, 'primary_focus_area': True} # added pfs
+          'date_posted': True, 'total_donations': True, '_id': False, 'primary_focus_area': True} # added primary focus area
 
 
 @app.route("/")
