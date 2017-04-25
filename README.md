@@ -20,7 +20,7 @@ The app is built to retrieve data from a **Mongo** (NoSQL) database, compiled wi
 - [Intro.js](http://introjs.com)
   - **Intro.js**, another javascript based, open source project that implements a step by step tutorial guide that is applied to each individual data visualization.
 
-## Project requirements/ guidlines
+## Project requirements/ guidelines
 
 - Create project using Flask framework
 - Use of D3js and Introjs
